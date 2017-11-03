@@ -15,4 +15,4 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 ]
 
 grails.plugin.springsecurity.rest.token.storage.useGorm = true
-grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'tech.tava.palermo.security.AuthToken'
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'tufar.security.AuthToken'
