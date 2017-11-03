@@ -24,12 +24,16 @@ repositories {
     maven { url "https://repo.grails.org/grails/core" }
 }
 
+ext{
+   springSecurityRestVersion = '2.0.0.M2'
+}
+
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
-    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    provided "org.springframework.boot:spring-boot-starter-tomcat"
     compile "org.grails:grails-plugin-url-mappings"
     compile "org.grails:grails-plugin-rest"
     compile "org.grails:grails-plugin-codecs"
@@ -48,12 +52,29 @@ dependencies {
     compile "org.grails.plugins:views-json-templates"
     console "org.grails:grails-console"
     profile "org.grails.profiles:rest-api"
-    runtime "com.h2database:h2"
+    // runtime "com.h2database:h2"
     testCompile "org.grails:grails-plugin-testing"
     testCompile "org.grails.plugins:geb"
     testCompile "org.grails:grails-datastore-rest-client"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+
+    // JDBC
+    runtime "org.postgresql:postgresql:9.4.1212.jre7" //Java JDBC 4.1 (JRE 7+) driver for PostgreSQL
+
+    //grails postgresql extensions plugin for JSON type
+    compile 'org.grails.plugins:postgresql-extensions:4.6.6'
+
+    //grails security-core plugin
+    compile "org.grails.plugins:spring-security-core:3.1.0"
+
+    //grails REST API Security plugin
+    compile "org.grails.plugins:spring-security-rest:${springSecurityRestVersion}"
+    compile "org.grails.plugins:spring-security-rest-gorm:${springSecurityRestVersion}"
+
+    // CORS
+    compile "org.grails.plugins:grails3-cors-interceptor:1.2.1"
+
 }
 
 bootRun {
