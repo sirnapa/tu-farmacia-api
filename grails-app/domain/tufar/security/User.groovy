@@ -3,6 +3,7 @@ package tufar.security
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import tufar.util.PaginableController
+import grails.rest.*
 
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
@@ -43,7 +44,7 @@ class User implements Serializable {
 	String getEmail(){
 		username
 	}
-	
+
 	static constraints = {
 		password blank: false, password: true
 		username blank: false, unique: true
