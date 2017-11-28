@@ -21,6 +21,7 @@ class Group {
 
     static mapping = {
 		table name:"group", schema:"base"
-		id generator:'sequence', params:[sequence:'security.seq_group_id']
+		id generator:'sequence', params:[sequence:'base.seq_group_id']
 	}
+    
 }

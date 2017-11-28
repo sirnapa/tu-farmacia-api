@@ -21,6 +21,7 @@ class Store {
 
     static mapping = {
 		table name:"store", schema:"base"
-		id generator:'sequence', params:[sequence:'security.seq_store_id']
+		id generator:'sequence', params:[sequence:'base.seq_store_id']
 	}
+    
 }
