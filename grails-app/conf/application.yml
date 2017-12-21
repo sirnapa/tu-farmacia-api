@@ -87,7 +87,7 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:postgresql://localhost:5432/tu-farmacia
+            url: jdbc:postgresql://localhost:5432/tufarmacia
     test:
         dataSource:
             dbCreate: update

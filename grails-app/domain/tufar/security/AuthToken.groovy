@@ -11,6 +11,6 @@ class AuthToken {
     static mapping = {
        version false
        table name:"auth_token", schema:"security"
-       id generator:'sequence', params:[sequence:'seq_auth_token_id']
+       id generator:'sequence', params:[sequence:'security.seq_auth_token_id']
     }
 }
